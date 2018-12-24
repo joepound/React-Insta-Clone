@@ -1,9 +1,17 @@
 import React from 'react';
 
-import './CommentSection.js';
+import './CommentSection.css';
 
-const CommentSection = pros => {
+const CommentSection = props => {
   return (
-    <input className="ig-clone__search-bar" placeholder="Search"/>  
+    <div className="ig-clone__post__comments">
+      {props.igCommentData.map(comment => 
+        <div key={comment.id} className="ig-clone__post__comments__item">
+          <span className="ig-clone__post__comments__item__acct">{comment.username}</span> {comment.text}
+        </div>
+      )}
+    </div>
   );
 }
+
+export default CommentSection;

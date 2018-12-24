@@ -1,0 +1,15 @@
+.ig-clone__post__comments {
+    width: 95%;
+    font-size: 1.4rem;
+    margin: 10px auto 20px;
+}
+
+.ig-clone__post__comments__item {
+    margin: 12.5px 0;
+}
+
+.ig-clone__post__comments__item__acct {
+    display: inline-block;
+    font-weight: bold;
+    cursor: pointer;
+}

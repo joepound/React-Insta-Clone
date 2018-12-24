@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import './PostContainer.css';
 
+import CommentSection from './../CommentSection/CommentSection.js';
+
 import HeartIcon from '../../heart.png';
 import CommentIcon from '../../comment.png';
 
@@ -25,6 +27,7 @@ class PostContainer extends Component {
           <input type="image" src={CommentIcon} alt="Comment on this photo"/>
         </div>
         <div className="ig-clone__post__likes"><span className="ig-clone__post__likes__count">{this.props.igPostData.likes}</span> likes</div>
+        <CommentSection igCommentData={this.props.igPostData.comments} />
       </article>
     );
   }

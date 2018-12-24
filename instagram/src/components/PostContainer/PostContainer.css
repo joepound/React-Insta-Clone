@@ -1,0 +1,51 @@
+.ig-clone__post {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    border: 1px lightgrey solid;
+    border-radius: 5px;
+    margin: 25px auto 50px;
+}
+
+.ig-clone__post__poster-info {
+    display: flex;
+    align-items: center;
+    width: 95%;
+    margin: 15px auto;
+}
+
+.ig-clone__post__poster-info__dp {
+    width: 5%;
+    margin-right: 1%;
+}
+
+.ig-clone__post__poster-info__dp > img{
+    border-radius: 100%;
+}
+
+.ig-clone__post__poster-info__acct {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin: 10px 1.5% 10px;
+}
+
+.ig-clone__post__icons {
+    width: 95%;
+    margin: 10px auto;
+}
+
+.ig-clone__post__icons input[type="image"] {
+    max-width: 24px;
+    margin-right: 3.75%;
+}
+
+.ig-clone__post__likes {
+    width: 95%;
+    font-size: 1.4rem;
+    margin: 0 auto 10px;
+}
+
+.ig-clone__post__likes__count {
+    font-weight: bold;
+    cursor: pointer;
+}

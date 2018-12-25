@@ -49,3 +49,13 @@
     font-weight: bold;
     cursor: pointer;
 }
+
+.ig-clone__post__time-passed {
+    width: 95%;
+    font-size: 1rem;
+    color: silver;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    border-bottom: 1px solid silver;
+    margin: 0 auto 15px;
+}

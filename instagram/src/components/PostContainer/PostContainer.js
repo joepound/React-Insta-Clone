@@ -13,12 +13,13 @@ import MoreOptionsIcon from '../../more-options.png';
 class PostContainer extends Component {
   constructor(props) {
     super();
+
+    this.state = {
+      igPostData: props.igPostData
+    }
   }
 
   formatTimestamp(timestamp) {
-    // "July 17th 2017, 12:42:40 pm"
-    // 2014-06-01T12:00:00Z
-    
     const monthNames = [
       "January", "February", "March", "April",
       "May", "June", "July", "August",
@@ -39,13 +40,32 @@ class PostContainer extends Component {
     const minutes = timeParts[1].padStart(2, "0");
     const seconds = timeParts[2].padStart(2, "0");
 
-    // return `${year}-${month}-${date}T${hours}:${minutes}:${seconds}`;
     return Moment(`${year}-${month}-${date}T${hours}:${minutes}:${seconds}`).fromNow();
+  }
+
+  handleKeypressOnCommentArea(e) {
+    if (e.keyCode === 13 && e.currentTarget.value.trim()) {
+      this.appendNewComment(e.currentTarget.value)
+      e.currentTarget.value = "";
+      e.currentTarget.blur();
+    }
   }
 
   fitCommentHeight(e) {
     e.currentTarget.style.height = "1px";
     e.currentTarget.style.height = e.currentTarget.scrollHeight + "px";
+  }
+
+  appendNewComment(text) {
+    const updateIgPostData = this.state.igPostData;
+
+    updateIgPostData.comments.push({
+      id: Math.ceil(Math.random() * 8999999999 + 1000000000),
+      username: "anon",
+      text: text
+    });
+
+    this.setState({igPostData: updateIgPostData});
   }
 
   render() {
@@ -63,10 +83,10 @@ class PostContainer extends Component {
           <input type="image" src={CommentIcon} alt="Comment on this photo"/>
         </div>
         <div className="ig-clone__post__likes"><span className="ig-clone__post__likes__count">{this.props.igPostData.likes}</span> likes</div>
-        <CommentSection igCommentData={this.props.igPostData.comments} />
+        <CommentSection igCommentData={this.state.igPostData.comments} />
         <div className="ig-clone__post__time-passed">{this.formatTimestamp(this.props.igPostData.timestamp)}</div>
         <div className="ig-clone__post__new-comment">
-          <textarea className="ig-clone__post__new-comment__input" placeholder="Add a comment..." onKeyDown={e => this.fitCommentHeight(e)} onBlur={e => this.fitCommentHeight(e)}></textarea>
+          <textarea className="ig-clone__post__new-comment__input" placeholder="Add a comment..." onKeyDown={e => this.handleKeypressOnCommentArea(e)} onBlur={e => this.fitCommentHeight(e)}></textarea>
           <input className="ig-clone__post__new-comment__more-icon" type="image" src={MoreOptionsIcon} alt="More Options"/>
         </div>
       </article>

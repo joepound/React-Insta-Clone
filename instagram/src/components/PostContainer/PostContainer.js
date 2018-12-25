@@ -42,6 +42,11 @@ class PostContainer extends Component {
     return Moment(`${year}-${month}-${date}T${hours}:${minutes}:${seconds}`).fromNow();
   }
 
+  fitCommentHeight(e) {
+    e.currentTarget.style.height = "1px";
+    e.currentTarget.style.height = e.currentTarget.scrollHeight + "px";
+  }
+
   render() {
     return (
       <article className="ig-clone__post">
@@ -59,6 +64,7 @@ class PostContainer extends Component {
         <div className="ig-clone__post__likes"><span className="ig-clone__post__likes__count">{this.props.igPostData.likes}</span> likes</div>
         <CommentSection igCommentData={this.props.igPostData.comments} />
         <div className="ig-clone__post__time-passed">{this.formatTimestamp(this.props.igPostData.timestamp)}</div>
+        <div className="ig-clone__post__new-comment"><textarea placeholder="Add a comment..." onKeyDown={e => this.fitCommentHeight(e)} onBlur={e => this.fitCommentHeight(e)}></textarea></div>
       </article>
     );
   }

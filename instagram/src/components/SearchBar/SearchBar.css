@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Grand+Hotel");
+
 .ig-clone__search-bar {
     position: fixed;
     top: 0;
@@ -35,8 +37,9 @@
 }
 
 .ig-clone__search-bar__ig-logos__text {
-    font-size: 2rem;
-    font-weight: bold;
+    font-family: "Grand Hotel";
+    font-size: 3rem;
+    color: #464243;
 }
 
 .ig-clone__search-bar__input {

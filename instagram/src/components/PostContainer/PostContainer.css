@@ -59,3 +59,24 @@
     border-bottom: 1px solid silver;
     margin: 0 auto 15px;
 }
+
+.ig-clone__post__new-comment {
+    width: 95%;
+    padding: 10px 0 20px;
+    
+    margin: auto;
+}
+
+.ig-clone__post__new-comment > textarea {
+    flex-grow: 1;
+    display: flex;
+    width: 100%;
+    height: auto;
+    max-height: 80px;
+    resize: none;
+    background: 0;
+    font-family: "Calibri";
+    font-size: 1.8rem;
+    border: none;
+    outline: 0;
+}

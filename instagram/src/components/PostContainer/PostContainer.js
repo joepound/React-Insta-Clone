@@ -8,6 +8,7 @@ import CommentSection from './../CommentSection/CommentSection.js';
 
 import HeartIcon from '../../heart.png';
 import CommentIcon from '../../comment.png';
+import MoreOptionsIcon from '../../more-options.png';
 
 class PostContainer extends Component {
   constructor(props) {
@@ -64,7 +65,10 @@ class PostContainer extends Component {
         <div className="ig-clone__post__likes"><span className="ig-clone__post__likes__count">{this.props.igPostData.likes}</span> likes</div>
         <CommentSection igCommentData={this.props.igPostData.comments} />
         <div className="ig-clone__post__time-passed">{this.formatTimestamp(this.props.igPostData.timestamp)}</div>
-        <div className="ig-clone__post__new-comment"><textarea placeholder="Add a comment..." onKeyDown={e => this.fitCommentHeight(e)} onBlur={e => this.fitCommentHeight(e)}></textarea></div>
+        <div className="ig-clone__post__new-comment">
+          <textarea className="ig-clone__post__new-comment__input" placeholder="Add a comment..." onKeyDown={e => this.fitCommentHeight(e)} onBlur={e => this.fitCommentHeight(e)}></textarea>
+          <input className="ig-clone__post__new-comment__more-icon" type="image" src={MoreOptionsIcon} alt="More Options"/>
+        </div>
       </article>
     );
   }

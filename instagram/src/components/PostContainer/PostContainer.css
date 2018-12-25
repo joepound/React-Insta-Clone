@@ -61,17 +61,17 @@
 }
 
 .ig-clone__post__new-comment {
+    display: flex;
     width: 95%;
     padding: 10px 0 20px;
-    
     margin: auto;
 }
 
-.ig-clone__post__new-comment > textarea {
+.ig-clone__post__new-comment__input {
     flex-grow: 1;
     display: flex;
-    width: 100%;
-    height: auto;
+    width: 90%;
+    height: 26px;
     max-height: 80px;
     resize: none;
     background: 0;
@@ -79,4 +79,10 @@
     font-size: 1.8rem;
     border: none;
     outline: 0;
+}
+
+.ig-clone__post__new-comment__more-icon {
+    width: 30px;
+    height: 30px;
+    margin-left: 1%;
 }

@@ -85,3 +85,8 @@ img {
   max-width: 800px;
   margin: 20px auto;
 }
+
+.ig-clone-main-content {
+  position: relative;
+  top: 50px;
+}

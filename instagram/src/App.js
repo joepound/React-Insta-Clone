@@ -17,7 +17,9 @@ class App extends Component {
     return (
       <main className="ig-clone-container">
         <SearchBar />
-        {this.igData.map(data => <PostContainer key={data.id} igPostData={data} />)}
+        <div className="ig-clone-main-content">
+          {this.igData.map(data => <PostContainer key={data.id} igPostData={data} />)}
+        </div>
       </main>
     );
   }

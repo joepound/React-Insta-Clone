@@ -5,7 +5,7 @@ import './Post.css';
 
 import Post from './Post.js';
 
-const PostContainer = props => {
+const PostsContainer = props => {
   return (
     <div className="posts-area">
       {props.posts.map((postData, i) => 
@@ -22,7 +22,7 @@ const PostContainer = props => {
   );
 };
 
-PostContainer.propTypes = {
+PostsContainer.propTypes = {
   currentUser: PropTypes.string.isRequired,
   posts: PropTypes.arrayOf(
     PropTypes.shape({
@@ -51,8 +51,8 @@ PostContainer.propTypes = {
   handleKeyDown: PropTypes.func.isRequired
 };
 
-PostContainer.defaultProps = {
+PostsContainer.defaultProps = {
   currentUser: "Instagram User"
 }
 
-export default PostContainer;
+export default PostsContainer;

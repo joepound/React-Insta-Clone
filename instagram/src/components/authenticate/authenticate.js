@@ -36,9 +36,17 @@ const authenticate = App => LoginContainer => class extends Component {
     return `${Date.now()}${Math.floor(Math.random() * 100000000)}`;
   }
 
-  loginUser() {
+  loginUser(loginForm) {
+    this.setState(prevState => ({
+      usernameInput: "",
+      passwordInput: "",
+      currentUser: prevState.usernameInput
+    }), () => localStorage.setItem("currentUser", JSON.stringify(this.state.currentUser)));
+  }
+
+  logoutUser() {
     this.setState({
-      currentUser: this.state.usernameInput
+      currentUser: ""
     }, () => localStorage.setItem("currentUser", JSON.stringify(this.state.currentUser)));
   }
 
@@ -208,13 +216,17 @@ const authenticate = App => LoginContainer => class extends Component {
   handleSubmit = e => {
     switch(e.currentTarget.name) {
       case "login-form" :
-        this.loginUser();
+        this.loginUser(e.currentTarget);
         break;
     }
   }
 
   handleClick = e => {
     switch (e.currentTarget.name || e.currentTarget.dataset.name) {
+      case "logout-btn" :
+        this.logoutUser();
+        break;
+
       case "heart-post-btn" :
         this.togglePostHeart(e);
         break;

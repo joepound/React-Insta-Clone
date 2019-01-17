@@ -14,14 +14,16 @@ const HeaderContainer = props => {
       <SearchBar
         postQueryInput={props.postQueryInput}
         handleChange={props.handleChange} />
-      <HeaderIcons />
+      <HeaderIcons
+        handleClick={props.handleClick} />
     </div>
   );
 };
 
 HeaderContainer.propTypes = {
   postQueryInput: PropTypes.string.isRequired,
-  handleChange: PropTypes.func.isRequired
+  handleChange: PropTypes.func.isRequired,
+  handleClick: PropTypes.func.isRequired
 };
 
 export default HeaderContainer;

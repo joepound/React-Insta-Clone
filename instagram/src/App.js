@@ -12,7 +12,8 @@ const App = props => {
     <div className="ig-clone">
       <HeaderContainer
         postQueryInput={props.postQueryInput}
-        handleChange={props.handleChange} />
+        handleChange={props.handleChange}
+        handleClick={props.handleClick} />
       <PostContainer 
         currentUser={props.currentUser}
         posts={props.postQueryResults}

@@ -58,3 +58,8 @@
     height: 35px;
     cursor: pointer;
 }
+
+.logout-btn {
+    width: 75px;
+    font-weight: bold;
+}

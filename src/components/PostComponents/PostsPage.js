@@ -41,14 +41,15 @@ PostsPage.propTypes = {
           _id: PropTypes.string.isRequired,
           username: PropTypes.string,
           text: PropTypes.string.isRequired,
-          likes: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+          likes: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired
         }).isRequired
       ).isRequired
     }).isRequired
   ).isRequired,
+  postQueryInput: PropTypes.string.isRequired,
   commentInputs: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
-  handleClick: PropTypes.func.isRequired,
   handleChange: PropTypes.func.isRequired,
+  handleClick: PropTypes.func.isRequired,
   handleKeyDown: PropTypes.func.isRequired
 };
 

@@ -1,11 +1,11 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-import './Header.css';
+import "./Header.css";
 
-import HeaderLogos from './HeaderLogos.js';
-import SearchBar from './SearchBar.js';
-import HeaderIcons from './HeaderIcons.js';
+import HeaderLogos from "./HeaderLogos.js";
+import SearchBar from "./SearchBar.js";
+import HeaderIcons from "./HeaderIcons.js";
 
 const HeaderContainer = props => {
   return (
@@ -13,9 +13,9 @@ const HeaderContainer = props => {
       <HeaderLogos />
       <SearchBar
         postQueryInput={props.postQueryInput}
-        handleChange={props.handleChange} />
-      <HeaderIcons
-        handleClick={props.handleClick} />
+        handleChange={props.handleChange}
+      />
+      <HeaderIcons handleClick={props.handleClick} />
     </div>
   );
 };

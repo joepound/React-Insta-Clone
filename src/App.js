@@ -355,8 +355,8 @@ class App extends Component {
         posts={this.state.postQueryResults}
         postQueryInput={this.state.postQueryInput}
         commentInputs={this.state.commentInputs}
-        handleChange={this.handleChange}
         handleClick={this.handleClick}
+        handleChange={this.handleChange}
         handleKeyDown={this.handleKeyDown}
       />
     ) : (

@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-import './Post.css';
+import "./Post.css";
 
 const PostImage = props => {
   return (

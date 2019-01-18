@@ -1,0 +1,94 @@
+@import url("//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css");
+
+@import '../../variables.css';
+
+.post-comments-area {
+    width: 92.5%;
+    margin: 10px 25px 20px;
+}
+
+.post-comment {
+    display: flex;
+    flex-direction: column;   
+    margin-bottom: 10px;
+}
+
+.post-comment-box {
+    display: flex;
+    justify-content: space-between;
+}
+
+.post-comment-box > * {
+    margin: 0 0 3.75px;
+}
+
+.post-comment-text {
+    width: 95%;
+    font-size: 1.6rem;
+    line-height: 1.2;
+}
+
+.post-comment-text-username {
+    float: left;
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.post-comment-text-usercomment {
+    overflow-wrap: break-word;
+}
+
+.post-comment-heart {
+    width: 3.75%;
+    max-width: 20px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.post-comment-options {
+    font-size: 1.4rem;
+    color: var(--comment-option-font-color);
+    cursor: pointer;
+}
+
+.post-comment-options-item {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.post-comment-options-item--hidden {
+    display: none;
+}
+
+.post-comment-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.post-comment-form-text {
+    display: flex;
+    width: 95%;
+    height: 50px;
+    font-family: "Calibri";
+    font-size: 1.8rem;
+    padding: 15px 5px 5px 15px;
+    border: none;
+    resize: none;
+}
+
+.post-comment-form-options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 7.5%;
+    height: 50px;
+    text-align: center;
+    font-family: "FontAwesome";
+    font-size: 1.4rem;
+    font-weight: bold;
+    cursor: pointer;
+}

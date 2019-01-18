@@ -6,7 +6,7 @@ import Fuse from "fuse.js";
 import LoginContainer from "./components/LoginComponents/LoginContainer.js";
 import PostsPage from "./components/PostComponents/PostsPage.js";
 
-import dummyData from "../../dummy-data.js";
+import dummyData from "./dummy-data.js";
 
 class App extends Component {
   constructor() {
@@ -33,7 +33,7 @@ class App extends Component {
         posts: [...posts],
         postQueryResults: [...posts],
         postQueryInput: "",
-        commentInputs: Array(dummyData.length).fill("")
+        commentInputs: Array(posts.length).fill("")
       },
       () => localStorage.setItem("posts", JSON.stringify(this.state.posts))
     );
@@ -352,8 +352,7 @@ class App extends Component {
     return this.state.currentUser ? (
       <PostsPage
         currentUser={this.state.currentUser}
-        posts={this.state.posts}
-        postQueryResults={this.state.postQueryResults}
+        posts={this.state.postQueryResults}
         postQueryInput={this.state.postQueryInput}
         commentInputs={this.state.commentInputs}
         handleChange={this.handleChange}

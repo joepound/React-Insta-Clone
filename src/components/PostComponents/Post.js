@@ -58,9 +58,7 @@ Post.propTypes = {
         _id: PropTypes.string.isRequired,
         username: PropTypes.string,
         text: PropTypes.string.isRequired,
-        likes: PropTypes.arrayOf(
-          PropTypes.string.isRequired
-        ).isRequired
+        likes: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
       }).isRequired
     ).isRequired
   }).isRequired,

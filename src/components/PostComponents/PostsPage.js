@@ -3,15 +3,21 @@ import PropTypes from "prop-types";
 
 import "./Post.css";
 
+import HeaderContainer from "../HeaderComponents/HeaderContainer";
 import PostsContainer from "./PostsContainer.js";
 
 const PostsPage = props => {
   return (
     <div className="posts-page">
+      <HeaderContainer
+        postQueryInput={props.postQueryInput}
+        handleChange={props.handleChange}
+        handleClick={props.handleClick}
+      />
       <PostsContainer
         currentUser={props.currentUser}
-        postData={postData}
-        commentInput={props.commentInputs}
+        posts={props.posts}
+        commentInputs={props.commentInputs}
         handleClick={props.handleClick}
         handleChange={props.handleChange}
         handleKeyDown={props.handleKeyDown}
@@ -34,7 +40,8 @@ PostsPage.propTypes = {
         PropTypes.shape({
           _id: PropTypes.string.isRequired,
           username: PropTypes.string,
-          text: PropTypes.string.isRequired
+          text: PropTypes.string.isRequired,
+          likes: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
         }).isRequired
       ).isRequired
     }).isRequired

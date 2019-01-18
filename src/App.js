@@ -76,7 +76,7 @@ class App extends Component {
       ? [
           ...new Fuse(this.state.posts, {
             shouldSort: false,
-            threshold: 0.1,
+            threshold: 0.375,
             minMatchCharLength: 1,
             keys: ["username"]
           }).search(postQueryInput)

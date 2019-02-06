@@ -5,7 +5,7 @@ import Moment from "moment";
 
 import "./Post.css";
 
-const PostTimePeriod = props => {
+function PostTimePeriod(props) {
   return (
     <span className="post-time-period">
       {Moment().diff(Moment(props.timestamp, "MMMM Do YYYY, h:mm:ss a"), "days")
@@ -15,7 +15,7 @@ const PostTimePeriod = props => {
         : Moment(props.timestamp, "MMMM Do YYYY, h:mm:ss a").fromNow()}
     </span>
   );
-};
+}
 
 PostTimePeriod.propTypes = {
   timestamp: PropTypes.string.isRequired

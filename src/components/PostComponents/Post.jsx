@@ -1,50 +1,40 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import "./Post.css";
+import './Post.css';
 
-import PostHeader from "./PostHeader.js";
-import PostImage from "./PostImage.js";
-import PostHeartsCount from "./PostHeartsCount.js";
-import PostIcons from "./PostIcons";
-import PostTimePeriod from "./PostTimePeriod";
-import CommentContainer from "../CommentComponents/CommentContainer.js";
-import NewCommentForm from "../CommentComponents/NewCommentForm.js";
+import PostHeader from './PostHeader';
+import PostImage from './PostImage';
+import PostHeartsCount from './PostHeartsCount';
+import PostIcons from './PostIcons';
+import PostTimePeriod from './PostTimePeriod';
+import CommentContainer from '../CommentComponents/CommentContainer';
+import NewCommentForm from '../CommentComponents/NewCommentForm';
 
-const Post = props => {
+function Post(props) {
   return (
-    <div className="user-post">
+    <div className='user-post'>
       <PostHeader
         dp={props.postData.thumbnailUrl}
         username={props.postData.username}
       />
       <PostImage postImage={props.postData.imageUrl} />
-      <PostIcons
-        currentUser={props.currentUser}
-        _id={props.postData._id}
-        likes={props.postData.likes}
-        handleClick={props.handleClick}
-      />
+      <PostIcons _id={props.postData._id} likes={props.postData.likes} />
       <PostHeartsCount likes={props.postData.likes} />
       <CommentContainer
-        currentUser={props.currentUser}
         post_id={props.postData._id}
         comments={props.postData.comments}
-        handleClick={props.handleClick}
       />
       <PostTimePeriod timestamp={props.postData.timestamp} />
       <NewCommentForm
         _id={props.postData._id}
         commentInput={props.commentInput}
-        handleChange={props.handleChange}
-        handleKeyDown={props.handleKeyDown}
       />
     </div>
   );
-};
+}
 
 Post.propTypes = {
-  currentUser: PropTypes.string.isRequired,
   postData: PropTypes.shape({
     _id: PropTypes.string.isRequired,
     username: PropTypes.string.isRequired,
@@ -61,14 +51,7 @@ Post.propTypes = {
       }).isRequired
     ).isRequired
   }).isRequired,
-  commentInput: PropTypes.string.isRequired,
-  handleClick: PropTypes.func.isRequired,
-  handleChange: PropTypes.func.isRequired,
-  handleKeyDown: PropTypes.func.isRequired
-};
-
-Post.defaultProps = {
-  currentUser: "Instagram User"
+  commentInput: PropTypes.string.isRequired
 };
 
 export default Post;

@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useContext } from 'react';
 import PropTypes from "prop-types";
+
+import { UserAuthContext } from '../../providers/UserAuthProvider';
+import { PostContext } from '../../providers/PostProvider';
 
 import "./Comment.css";
 
-const Comment = props => {
+function Comment(props) {
+  const { currentUser } = useContext(UserAuthContext);
+  const { toggleCommentHeart, deleteComment } = useContext(PostContext);
+
   return (
     <div className="post-comment">
       <div className="post-comment-box">
@@ -18,7 +24,7 @@ const Comment = props => {
         <div className="post-comment-heart">
           <img
             src={
-              props.commentData.likes.includes(props.currentUser)
+              props.commentData.likes.includes(currentUser)
                 ? "images/heart-on.png"
                 : "images/heart-off.png"
             }
@@ -26,43 +32,37 @@ const Comment = props => {
             name="heart-comment-btn"
             data-post_id={props.post_id}
             data-comment_id={props.commentData._id}
-            onClick={props.handleClick}
+            onClick={toggleCommentHeart}
           />
         </div>
       </div>
       <div className="post-comment-options">
         <div
           className={
-            props.commentData.username === props.currentUser
+            props.commentData.username === currentUser
               ? "post-comment-options-item"
               : "post-comment-options-item--hidden"
           }
           data-name="delete-comment-btn"
           data-post_id={props.post_id}
           data-comment_id={props.commentData._id}
-          onClick={props.handleClick}
+          onClick={deleteComment}
         >
           Delete
         </div>
       </div>
     </div>
   );
-};
+}
 
 Comment.propTypes = {
-  currentUser: PropTypes.string.isRequired,
   post_id: PropTypes.string.isRequired,
   commentData: PropTypes.shape({
     _id: PropTypes.string.isRequired,
     username: PropTypes.string.isRequired,
     text: PropTypes.string.isRequired,
     likes: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired
-  }).isRequired,
-  handleClick: PropTypes.func.isRequired
-};
-
-Comment.defaultProps = {
-  username: "Instagram User" // Temporary until user authentication functionality is built
+  }).isRequired
 };
 
 export default Comment;

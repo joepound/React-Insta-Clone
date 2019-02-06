@@ -2,7 +2,7 @@ import React from "react";
 
 import "./Header.css";
 
-const HeaderLogos = props => {
+function HeaderLogos(props) {
   return (
     <div className="header-logos">
       <div className="header-img-logo">
@@ -12,6 +12,6 @@ const HeaderLogos = props => {
       <h1 className="header-txt-logo">Instagram</h1>
     </div>
   );
-};
+}
 
 export default HeaderLogos;
